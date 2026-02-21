@@ -16,8 +16,8 @@ document.getElementById("btn-cashout").addEventListener("click", function () {
   }
 
   // 3..get the current amount,validity and convert to number
-  const balanceElement = document.getElementById("balance");
-  const currentBalance = Number(balanceElement.innerText);
+  const currentBalance = getBalance();
+
   //  4.calculate the new Balance
   const newBalance = currentBalance - cashoutAmount;
   if (newBalance < 0) {
@@ -29,7 +29,8 @@ document.getElementById("btn-cashout").addEventListener("click", function () {
   if (passwordCashout === "1234") {
     // 5.1: true:::show an alert >>>> set Balance
     alert("Cashout Successfull");
-    balanceElement.innerText = newBalance;
+
+    setBalance(newBalance);
     // input clear
     document.getElementById("cashout-number").value = "";
     document.getElementById("cashout-amount").value = "";
