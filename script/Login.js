@@ -8,7 +8,7 @@ document.getElementById("btn-login").addEventListener("click", function () {
   // s-3:match number and password
   if (contactNumber === "01234567890" && getPassword === "1234") {
     alert("Login Sucessfull");
-    window.location.assign("/home.html");
+    window.location.assign("home.html");
   } else {
     alert("Login failed");
     return;
