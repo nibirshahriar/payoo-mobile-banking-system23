@@ -22,9 +22,11 @@ function setBalance(value) {
 function showOnly(id) {
   const addMoney = document.getElementById("add-money");
   const cashOut = document.getElementById("cashout");
+  const history = document.getElementById("history");
   // sobai k hide korbe
   addMoney.classList.add("hidden");
   cashOut.classList.add("hidden");
+  history.classList.add("hidden");
   // id wala element k show kora
   const selected = document.getElementById(id);
   selected.classList.remove("hidden");

@@ -25,12 +25,25 @@ document.getElementById("btn-cashout").addEventListener("click", function () {
     return;
   }
   // 5.get th pin and verify:
-  const passwordCashout = getValueFromInput("input-password");
+  const passwordCashout = getValueFromInput("input-password-cashout");
   if (passwordCashout === "1234") {
     // 5.1: true:::show an alert >>>> set Balance
     alert("Cashout Successfull");
 
     setBalance(newBalance);
+
+    // 1.history-container k dhorbo
+    const history = document.getElementById("history-container");
+    // 2.new div create korbo
+    const newHistory = document.createElement("div");
+    // 3.new div e innerHTML create korbo
+    newHistory.innerHTML = `
+ <div class="transactions-card p-5 bg-base-300">
+ Cashout ${cashoutAmount} Tk Success to ${cashoutNumber} at ${new Date()}
+</div>
+`;
+    // 4.history-container e new div append korbo
+    history.append(newHistory);
     // input clear
     document.getElementById("cashout-number").value = "";
     document.getElementById("cashout-amount").value = "";
